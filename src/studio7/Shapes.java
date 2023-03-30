@@ -44,4 +44,5 @@ class Die {
 	public int rollDie() {
 		return (int) Math.floor(Math.random() * sides) + 1;
 	}
+
 }
