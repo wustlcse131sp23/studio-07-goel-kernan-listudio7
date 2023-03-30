@@ -1,7 +1,11 @@
 package studio7;
 
 public class Shapes {
-
+public static void main(String[] args) {
+	Fraction x = new Fraction(1,1);
+	Fraction y = new Fraction(2,1);
+	x.addFraction(y);
+}
 }
 
 class Rectangle {
@@ -44,4 +48,43 @@ class Die {
 	public int rollDie() {
 		return (int) Math.floor(Math.random() * sides) + 1;
 	}
+}
+
+class Fraction {
+	public double numerator;
+	public double denominator;
+	
+	public Fraction(double numerator, double denominator) {
+		this.numerator = numerator;
+		this.denominator = denominator;
+	}
+	
+	public double getNumerator() {
+		return numerator;
+	}
+	
+	public double getDenominator() {
+		return denominator;
+	}
+	
+	public double getFraction() {
+		return numerator/denominator;
+	}
+	
+	public Fraction addFraction(Fraction x) {
+		Fraction z = new Fraction(getNumerator()*x.getDenominator()+x.getNumerator()*getNumerator(),getDenominator()*x.getDenominator());
+		return z;
+	}
+	public Fraction multFraction(Fraction x) {
+		Fraction z = new Fraction (getNumerator()*x.getNumerator(), getDenominator()*x.getDenominator());
+	return z;
+	}
+	
+	public Fraction reciprocal(Fraction x) {
+		Fraction z = new Fraction (getDenominator(),getNumerator());
+		return z;
+	}
+	
+	
+	
 }
